@@ -39,7 +39,6 @@ $ npm install
 $ npm run start
 
 # webpack
-
 $ npm run start:webpack
 
 # watch mode
