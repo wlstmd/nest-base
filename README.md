@@ -38,6 +38,10 @@ $ npm install
 # development
 $ npm run start
 
+# webpack
+
+$ npm run start:webpack
+
 # watch mode
 $ npm run start:dev
 
