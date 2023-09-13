@@ -9,6 +9,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { LoggerMiddleware } from './middlewares/logger.middleware';
 import { CommentsModule } from './comments/comments.module';
 import { EventsModule } from './events/events.module';
+import { PaymentsModule } from './payments/payments.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { EventsModule } from './events/events.module';
       },
     }),
     CommentsModule,
+    PaymentsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
