@@ -10,13 +10,13 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 
+@ApiBearerAuth()
+@ApiSecurity('basic')
 @ApiTags('Payments')
 @Controller('payments')
 export class PaymentsController {
   constructor(private readonly paymentsService: PaymentsService) {}
 
-  @ApiBearerAuth()
-  @ApiSecurity('basic')
   @ApiOperation({ summary: '결제 성공' })
   @Get('/success')
   success(@Res() res: Response): void {
