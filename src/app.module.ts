@@ -1,6 +1,7 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { MatchModule } from './match/match.module';
 import { SignModule } from './sign/sign.module';
 import { UserModule } from './user/user.module';
 import { MongooseModule } from '@nestjs/mongoose';
@@ -8,14 +9,15 @@ import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { LoggerMiddleware } from './middlewares/logger.middleware';
 import { CommentsModule } from './comments/comments.module';
-import { EventsModule } from './events/events.module';
+import { MatchGateway } from './match/match.gateway';
 import { PaymentsModule } from './payments/payments.module';
+import { UserService } from './user/user.service';
 
 @Module({
   imports: [
     MongooseModule.forRoot('mongodb://localhost/gbsw_fs'),
     SignModule,
-    EventsModule,
+    MatchModule,
     UserModule,
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.register({
@@ -28,7 +30,7 @@ import { PaymentsModule } from './payments/payments.module';
     PaymentsModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, MatchGateway, UserService],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {

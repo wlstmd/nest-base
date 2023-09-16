@@ -33,10 +33,10 @@
       // https://docs.tosspayments.com/reference/widget-sdk#requestpayment결제-정보
       button.addEventListener('click', function () {
           paymentWidget.requestPayment({
-              orderId: '4TITFDV0Qqs0xzmtqqtjD1', // 주문 ID(직접 만들어주세요)
-              orderName: '토스 티셔츠 외 1건', // 주문명
-              successUrl: 'http://localhost:3090/payments/success', // 결제에 성공하면 이동하는 페이지(간단하게 직접 만들었다)
-              failUrl: 'http://localhost:3090/fail', // 결제에 실패하면 이동하는 페이지(어차피 에러니까 안 만들었다)
+              orderId: '4TITFDV0Qqs0xzmtqqtjD7', // 주문 ID(직접 만들어주세요)
+              orderName: '토스 티셔츠 외 7건', // 주문명
+              successUrl: 'http://localhost:3090/api/payments/success', // 결제에 성공하면 이동하는 페이지(간단하게 직접 만들었다)
+              failUrl: 'http://localhost:3090/api/fail', // 결제에 실패하면 이동하는 페이지(어차피 에러니까 안 만들었다)
               customerEmail: 'customer123@gmail.com',
               customerName: '김토스',
           });
