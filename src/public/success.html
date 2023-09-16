@@ -1,12 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>토스 결제 성공</title>
+    <style>
+          body {
+      font-family: 'Helvetica', sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .success-container {
+      text-align: center;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #007bff;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+    </style>
 </head>
 <body>
-  <h1>Success Page</h1>
-  <p>결제가 완료 되었습니다!</p>
+    <div class="success-container">
+        <h1>토스 결제가 성공적으로 완료되었습니다!</h1>
+        <p>결제 내역 및 정보를 확인하려면 아래 버튼을 클릭하세요.</p>
+        <button id="view-payment-details">결제 내역 보기</button>
+    </div>
+    
+    <script>
+      // 이벤트 리스너 추가하여 버튼 클릭 시 동작 정의
+      document
+        .getElementById('view-payment-details')
+        .addEventListener('click', function () {
+          // 여기에 결제 내역을 보여주는 로직을 추가할 수 있습니다.
+          // 예를 들어, 결제 내역을 API를 통해 가져와서 화면에 표시할 수 있습니다.
+          alert('결제 내역을 보여줍니다.'); // 간단한 예시
+        });
+    </script>
 </body>
 </html>
