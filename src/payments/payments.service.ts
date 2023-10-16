@@ -5,7 +5,7 @@ import axios from 'axios';
 @Injectable()
 export class PaymentsService {
   private readonly tossUrl = 'https://api.tosspayments.com/v1/payments';
-  private readonly secretKey = 'test_sk_5OWRapdA8dYvepoEO6W3o1zEqZKL';
+  private readonly secretKey = 'testKey';
 
   async tossPayment(tossPaymentDTO: TossPaymentDTO) {
     const { orderId, amount, paymentKey } = tossPaymentDTO;
