@@ -8,7 +8,7 @@ export class CommentsService {
   constructor(
     @InjectModel('Comment') private readonly commentModel: Model<Comment>,
   ) {}
-
+  // 댓글 생성
   async createComment(content: string): Promise<Comment> {
     const newComment = new this.commentModel({ content });
     return await newComment.save();
@@ -18,6 +18,7 @@ export class CommentsService {
     return await this.commentModel.find().exec();
   }
 
+  // 게시물 생성
   async createPost(title: string, content: string): Promise<Comment> {
     const newPost = new this.commentModel({
       postTitle: title,
