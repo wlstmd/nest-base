@@ -15,7 +15,7 @@ import { UserService } from './user/user.service';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/gbsw_fs'),
+    MongooseModule.forRoot('mongodb://localhost/nest-base'),
     SignModule,
     MatchModule,
     UserModule,
